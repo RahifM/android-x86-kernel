@@ -1,0 +1,12 @@
+kind: pipeline
+name: Kernel Drone
+
+clone:
+  depth: 1
+
+steps:
+ - name: compile
+   image: ubuntu:20.04
+   commands:
+      - make android-x86_64_defconfig
+      - make
