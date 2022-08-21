@@ -10,6 +10,6 @@ steps:
    commands:
       - apt-get update -y && apt-get install make gcc bison flex bc libssl-dev -y
       - make android-x86_64_defconfig
-      - make -j$(nproc --all) kernel
+      - make -j$(nproc --all)
       - ls arch/x86/boot/
       - ls arch/x86_64/boot/
