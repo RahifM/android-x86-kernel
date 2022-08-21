@@ -1,0 +1,19 @@
+kind: pipeline
+name: Kernel Drone
+
+clone:
+  depth: 1
+
+steps:
+ - name: compile
+   image: ubuntu:20.04
+   commands:
+      - apt-get update -y && apt-get install make gcc bison flex bc libssl-dev zip -y
+      - make android-x86_64_defconfig
+      - make -j$(nproc --all)
+      - ls out/arch/x86/boot/
+      - ls out/arch/x86_64/boot/
+      - du -hs out/arch/*/boot/bzImage
+      - du -hs out
+      - cat out/include/generated/uts*
+      - cat out/include/generated/comp*h
