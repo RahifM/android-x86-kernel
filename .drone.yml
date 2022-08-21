@@ -10,4 +10,4 @@ steps:
    commands:
       - apt-get update -y && apt-get install make gcc bison flex bc libssl-dev -y
       - make android-x86_64_defconfig
-      - make
+      - make -j$(nproc --all)
