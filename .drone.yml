@@ -15,3 +15,5 @@ steps:
       - ls out/arch/x86_64/boot/
       - du -hs out/arch/*/boot/bzImage
       - du -hs out
+      - cat out/include/generated/uts*
+      - cat out/include/generated/comp*h
