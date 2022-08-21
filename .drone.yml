@@ -17,3 +17,4 @@ steps:
       - du -hs out
       - cat out/include/generated/uts*
       - cat out/include/generated/comp*h
+      - zip -r out.zip out
